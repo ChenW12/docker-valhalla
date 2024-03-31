@@ -20,7 +20,7 @@ RUN apt-get update > /dev/null && \
   export DEBIAN_FRONTEND=noninteractive && \
   apt-get install -y libluajit-5.1-2 libgdal32 \
   libzmq5 libczmq4 spatialite-bin libprotobuf-lite32 sudo locales \
-  libsqlite3-0 libsqlite3-mod-spatialite libcurl4 \
+  libsqlite3-0 libsqlite3-mod-spatialite libcurl4 wget \
   python3.11-minimal python3-distutils curl unzip moreutils jq spatialite-bin python-is-python3 > /dev/null
 
 COPY --from=builder /usr/local /usr/local

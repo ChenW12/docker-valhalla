@@ -60,6 +60,7 @@ fi
 # evaluate CMD
 if [[ $1 == "build_tiles" ]]; then
 
+  wget https://download.geofabrik.de/europe/united-kingdom/england/greater-london-latest.osm.pbf -O /custom_files/greater-london-latest.osm.pbf
   run_cmd "/valhalla/scripts/configure_valhalla.sh ${CONFIG_FILE} ${CUSTOM_FILES} ${TILE_DIR} ${TILE_TAR}"
   # tar tiles unless not wanted
   if [[ "$build_tar" == "True" ]] || [[ "$build_tar" == "Force" ]]; then
