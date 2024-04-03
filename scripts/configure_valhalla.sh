@@ -209,7 +209,7 @@ if [[ "${do_build}" == "True" ]]; then
   echo "= Build the initial graph. ="
   echo "============================"
 
-  valhalla_build_tiles -c ${CONFIG_FILE} -e build ${files} || exit 1
+  valhalla_build_tiles -c ${CONFIG_FILE} -e build -j 16 ${files} || exit 1
 
   # Build the elevation data if requested
   if [[ $do_elevation == "True" ]]; then
