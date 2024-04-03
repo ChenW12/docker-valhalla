@@ -209,7 +209,7 @@ if [[ "${do_build}" == "True" ]]; then
   echo "= Build the initial graph. ="
   echo "============================"
 
-  valhalla_build_tiles -c ${CONFIG_FILE} -e build -j 32 ${files} || exit 1
+  valhalla_build_tiles -c ${CONFIG_FILE} -e build ${files} || exit 1
 
   # Build the elevation data if requested
   if [[ $do_elevation == "True" ]]; then
@@ -247,8 +247,8 @@ if [[ "${do_build}" == "True" ]] || [[ updated_default_speed_config == "True" ]]
   echo "==============================="
   echo "= Enhancing the initial graph ="
   echo "==============================="
-  # 32 is the number of threads
-  valhalla_build_tiles -c ${CONFIG_FILE} -s enhance -j 32 ${files} || exit 1
+
+  valhalla_build_tiles -c ${CONFIG_FILE} -s enhance ${files} || exit 1
 
   echo "INFO: Successfully built files: ${files}"
   add_hashes "${files}"
