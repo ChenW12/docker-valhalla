@@ -83,6 +83,8 @@ if [[ $1 == "build_tiles" ]]; then
   if [[ ${serve_tiles} == "True" ]]; then
     if test -f ${CONFIG_FILE}; then
       echo "INFO: Found config file. Starting valhalla service!"
+      # Set the listen port $PORT (what Heroku requires)
+      sed -i "s/8002/$PORT/" ${CONFIG_FILE}
       cmd_prefix=exec run_cmd "valhalla_service ${CONFIG_FILE} ${server_threads}"
     else
       echo "WARNING: No config found!"

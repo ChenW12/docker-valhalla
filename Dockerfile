@@ -67,9 +67,11 @@ RUN python -c "import valhalla,sys; print (sys.version, valhalla)" \
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 ENV LD_LIBRARY_PATH /usr/local/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/lib32:/usr/lib32
 
+
+
 # RUN /valhalla/scripts/run.sh build_tiles
 
 # Expose the necessary port
-EXPOSE 8002
+# EXPOSE 8002
 ENTRYPOINT ["/valhalla/scripts/run.sh"]
 CMD ["build_tiles"]
