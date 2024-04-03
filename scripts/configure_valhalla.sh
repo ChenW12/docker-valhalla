@@ -247,7 +247,7 @@ if [[ "${do_build}" == "True" ]] || [[ updated_default_speed_config == "True" ]]
   echo "==============================="
   echo "= Enhancing the initial graph ="
   echo "==============================="
-  # 16 is the number of threads
+  # 32 is the number of threads
   valhalla_build_tiles -c ${CONFIG_FILE} -s enhance -j 32 ${files} || exit 1
 
   echo "INFO: Successfully built files: ${files}"
