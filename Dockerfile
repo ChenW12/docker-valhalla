@@ -69,5 +69,5 @@ ENV LD_LIBRARY_PATH /usr/local/lib:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-g
 
 # Expose the necessary port
 EXPOSE 8002
-ENTRYPOINT ["/bin/bash"]
-# CMD ["build_tiles"]
+ENTRYPOINT ["/valhalla/scripts/run.sh"]
+CMD ["build_tiles"]
