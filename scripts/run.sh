@@ -97,6 +97,8 @@ if [[ $1 == "build_tiles" ]]; then
   fi
 elif [[ $1 == "tar_tiles" ]]; then
   do_build_tar "$build_tar"
+elif [[ $1 == "only_build_tiles" ]]; then
+  run_cmd "/valhalla/scripts/configure_valhalla.sh ${CONFIG_FILE} ${CUSTOM_FILES} ${TILE_DIR} ${TILE_TAR}"
 else
   echo "ERROR: Unrecognized CMD: '$1'"
   exit 1
