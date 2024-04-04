@@ -51,7 +51,7 @@ RUN groupadd -g ${VALHALLA_GID} valhalla && \
 COPY scripts/. /valhalla/scripts
 
 # Copy map data
-COPY custom_files/andorra-latest.osm.pbf /custom_files/andorra-latest.osm.pbf
+COPY custom_files/greater-london-latest.osm.pbf /custom_files/greater-london-latest.osm.pbf
 
 USER valhalla
 
