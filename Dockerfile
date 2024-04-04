@@ -50,8 +50,8 @@ RUN groupadd -g ${VALHALLA_GID} valhalla && \
 
 COPY scripts/. /valhalla/scripts
 
-# Copy map data
-COPY custom_files/greater-london-latest.osm.pbf /custom_files/greater-london-latest.osm.pbf
+# Install map data
+RUN wget https://download.geofabrik.de/europe/united-kingdom/england/greater-london-latest.osm.pbf -O /custom_files/greater-london-latest.osm.pbf
 
 USER valhalla
 
