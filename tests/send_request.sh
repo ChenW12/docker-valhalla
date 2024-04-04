@@ -8,6 +8,6 @@ r+=',"lon":'
 r+=$4
 r+='}],"costing":"pedestrian","directions_options":{"units":"miles"}}'
 #echo "$r"
-curl localhost:8002/route -d $r
+curl <url>/route -d $r
 
 
